@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group col-4">
                         <label for="cantidad">Cantidad</label>
-                        <input type="text" class="form-control" id="cantidad">
+                        <input type="number" min = 1 class="form-control" id="cantidad">
                     </div>
                 </div>
             </div>
@@ -63,21 +63,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        document.getElementById("articulo").focus();
+    $(document).ready(function() {
+        $('#articulo').focus();
+        $('#cantidad').val('1');
     });
 
-    document.getElementById("venta").addEventListener("submit", function(event){
+    $('#venta').submit(function(event) {
         event.preventDefault();
-        let articulo = document.getElementById('articulo').value;
-        let cantidad = document.getElementById('cantidad').value;
-        if(articulo == '' && cantidad == ''){
-            document.getElementById("cantidad").focus();
-        }else if(articulo == '' && cantidad != ''){
-            document.getElementById("articulo").focus();
-        }else{
-            toastr.info(articulo);
-        }
+        let articulo = $('#articulo').val();
+        let cantidad = $('#cantidad').val();
+        let activeElementId = $(document.activeElement).attr('id');
+        let focusElement = articulo === '' ? $('#articulo') : $('#cantidad');
 
+        if (activeElementId === 'articulo' && articulo === '') {
+            $('#cantidad').focus();
+        } else if (activeElementId === 'cantidad' && articulo === '') {
+            $('#articulo').focus();
+        } else {
+            toastr.info(articulo);
+            $('#articulo').focus();
+            $('#cantidad').val('1');
+            $('#articulo').val('');
+        }
     });
 </script>

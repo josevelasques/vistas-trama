@@ -318,6 +318,15 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
+        ['header' => 'Artículos'],
+        [
+            'text' => 'Listar artículos',
+            'route'  => 'articulos',
+        ],
+        [
+            'text' => 'Listar categorias',
+            'route'  => 'categorias',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',

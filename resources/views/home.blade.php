@@ -10,7 +10,6 @@
 @section('content')
 @livewire('list-articles')
 @livewire('user-detail')
-@livewire('nuevo-rubro')
 @livewire('carousel')
 @livewire('nueva-marca')
 @livewire('nuevo-proveedor')
@@ -26,6 +25,7 @@
 @section('js')
 
 <script>
-    console.log('Hi!');
+    console.log('home');
 </script>
+
 @stop

@@ -8,6 +8,6 @@ class NuevaMarca extends Component
 {
     public function render()
     {
-        return view('livewire.nueva-marca');
+        return view('livewire.marcas.nueva-marca');
     }
 }

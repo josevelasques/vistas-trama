@@ -1,6 +1,9 @@
 <div class="card">
+    @if ($form)
+        @livewire('nuevo-articulo')
+    @endif
     <div class="card-header">
-        <h5 class="card-title">Puntos de venta</h5>
+        <h5 class="card-title">Lista de Artículos <a class="btn btn-primary" wire:click = "mostrarForm"><i class="fas fa-plus"></i> Nuevo Artículo</a></h5>
     </div>
     <div class="card-body">
         <table id="example2" class="table table-bordered table-hover">
@@ -34,3 +37,4 @@
         </table>
     </div>
 </div>
+
